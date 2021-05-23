@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import Instrumental, Producer
+from .models import Lead
 
+# Register your models here.
 models = [
-    Instrumental,
-    Producer
-    ]
-
+    Lead
+]
 for model in models: 
     admin.site.register(model)
