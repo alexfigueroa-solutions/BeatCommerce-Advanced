@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-uu7+y)&+o(#&#c&u$k4z6*t9flklc$ppg+dlzdvbng$ozvvl!$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1"
+]
 
 
 # Application definition
@@ -39,7 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'beats',
     'leads',
+    'rest_framework'
+
+    
+    
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
