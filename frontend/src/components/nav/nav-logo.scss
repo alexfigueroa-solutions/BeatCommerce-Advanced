@@ -1,0 +1,37 @@
+@import "../abstract/colors.scss";
+@import "../abstract/fonts.scss";
+.navLogoText{
+    position: relative;
+    font-family: bebasNeue;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 900;
+    text-shadow: 0rem 0rem 0.01rem rgba(218, 185, 0, 0.623);
+    color: black;
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+    background: $goldGradient;    
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 2.5s linear infinite;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+  .navLogoText:hover{
+    animation:  animate 0.5s linear infinite;
+    
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+      opacity: 80%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    100% {
+      background-position: 500%;
+      opacity: 80%;
+    }
+  }

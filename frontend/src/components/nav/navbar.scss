@@ -1,0 +1,118 @@
+@import "../abstract/colors.scss";
+@import "../abstract/fonts.scss";
+.navbarWrapper{
+    background: $darkGradient;
+    top: 0rem;
+    margin-top: 0rem;
+    width: 100%;
+    border-bottom: 0.1rem solid rgb(5,5,5);
+    padding: 1rem;
+    position:fixed;
+
+}
+.navbarDiv{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+.navEntryListWrapper{
+    
+    align-items: center;
+    display: flex;
+    padding-bottom: 0rem;
+    height: 100%;
+    flex-flow: column nowrap; 
+    justify-content: center;
+ 
+}
+.navEntryListDiv{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.navEntryList{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    grid-gap: 1.5rem;
+    list-style: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+.navEntryItem{
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    
+    flex-flow: column nowrap;
+    justify-content: center;
+    font-size: 1rem;
+}
+.navEntryItem:hover{
+    .navEntryText{
+        color: $goldBright;
+        text-shadow: 0rem 0rem 1rem black;
+        font-size: 2.2rem;
+        font-family: lakmus;
+        animation: navEntryItemHover 0.5s;
+        
+        
+    }
+    background-color: black;
+
+}
+@keyframes navEntryItemHover{
+    0%{
+        font-size: 1.2rem;
+      
+    }
+    100%{
+        font-size: 2.2rem;
+  
+    }
+}
+@keyframes navEntryItemHoverRev{
+    0%{
+        font-size: 2.2rem;
+        
+    }
+    100%{
+        font-size: 1.2rem;
+        
+    }
+}
+.navEntryText{
+    text-decoration: none;
+    color: $textDarkWhite;
+    font-weight: 500;
+    font-size: 1.2rem;
+    animation: navEntryItemHoverRev 0.25s;
+    font-family: bebasNeue;
+    
+    
+}
+.navbarExtraMenuDiv{
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+.navbarExtraMenuWrapper{
+    height: 100%;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    
+    margin-top: 0rem;
+}
+.navbarExtraMenuIcon{
+    color: $goldBright;
+    font-size: 1.2rem;
+    padding: 0rem 0.5rem;
+}
