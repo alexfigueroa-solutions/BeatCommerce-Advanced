@@ -1,0 +1,26 @@
+@import "../abstract/colors.scss";
+
+.homepageWrapper{
+    width: 100%;
+    height: 90.5vh;
+    
+    background-position:top;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-image: url('../../images/homepage-bg.jpg');
+}
+
+.homepageMainDiv{
+    width: 100%;
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+}
+.homepagePromotionWrapper{
+    width: 50%;
+}
+.homepageIntroWrapper{
+    width: 50%;
+}

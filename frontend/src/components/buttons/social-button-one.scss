@@ -1,0 +1,28 @@
+@import "../abstract/colors.scss";
+
+
+.socialButtonOne{
+    color: $textDarkWhite;
+    border: 0.1rem solid rgba(0, 0, 0, 0);
+    padding: 0.5rem;
+    border-radius: 0%;
+}
+.socialButtonOne:hover{
+    color: $goldBright;
+    border: 0.1rem solid $goldBright;
+    border-radius: 50%;
+    animation: socialButtonOneHover 1s;
+}
+@keyframes socialButtonOneHover{
+    0%{
+        color: $textDarkWhite;
+        border: 0.1rem solid rgba(0, 0, 0, 0);
+        padding: 0.5rem;
+        border-radius: 0%;
+    }
+    100%{
+        color: $goldBright;
+        border: 0.1rem solid $goldBright;
+        border-radius: 50%;
+    }
+}

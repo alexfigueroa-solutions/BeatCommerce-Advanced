@@ -15,7 +15,40 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('beats.urls'))
+=======
+from rest_framework import routers
+import artists.views as artist_views
+
+router = routers.DefaultRouter()
+
+router_item_list = [
+    {
+        "plural": r"artists",
+        "view": artist_views.ArtistView,
+        "singular": "artist"
+    },
+    {
+        "plural": r"social-links",
+        "view": artist_views.SocialLinkView,
+        "singular": "social-link"
+    }
+]
+for router_item in router_item_list:
+    router.register(
+        router_item["plural"],
+        router_item["view"],
+        router_item["singular"]
+    )
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path(
+        "api/",
+        include(router.urls)
+    )
+>>>>>>> 7233e50ffcf548050c102dec14182634ac4f2336
 ]
