@@ -1,20 +1,21 @@
 from rest_framework import serializers
-from .models import Instrumental, Producer
-
-class InstrumentalSerializer(serializers.ModelSerializer):
+from abstract.serializers import AbstractAudioFileSerializer, AbstractCollectionSerializer
+from .models import Instrumental, InstrumentalCollection
+class InstrumentalSerializer(AbstractAudioFileSerializer, serializers.ModelSerializer):
+    
     class Meta: 
         model = Instrumental
-        fields = (
-            "title",
-            "bpm",
-            "uploaded_at"
-        )
+        fields = AbstractAudioFileSerializer.Meta.fields + [
+            "producer"
+        ]
 
-class ProducerSerializer(serializers.ModelSerializer):
+class InstrumentalCollectionSerializer(AbstractCollectionSerializer, serializers.ModelSerializer):
+    collection_instrumentals = InstrumentalSerializer(
+        many = True,
+        read_only = True
+    )
     class Meta:
-        model = Producer
-        fields = (
-            "first_name",
-            "last_name",
-            "alias"
-        )
+        model = InstrumentalCollection,
+        fields = AbstractAudioFileSerializer.Meta.fields +  [    
+            "instrumentals"
+        ]

@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Instrumental
+from .models import Instrumental, InstrumentalCollection
 
 models = [
-    Instrumental
+    Instrumental,
+    InstrumentalCollection
     ]
 
 for model in models: 

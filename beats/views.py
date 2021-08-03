@@ -1,13 +1,35 @@
 from django.shortcuts import render
-from .models import Instrumental, Producer
-from .serializers import ProducerSerializer, InstrumentalSerializer
-from rest_framework import generics
+from rest_framework.response import Response
+from .models import Instrumental, InstrumentalCollection
+from .serializers import InstrumentalCollectionSerializer, InstrumentalSerializer
+from rest_framework import viewsets, generics
 # Create your views here.
-
-class InstrumentalListCreate(generics.ListCreateAPIView):
+def is_there_more_data(request):
+    offset = request.GET.get('offset')
+    if int(offset) > Instrumental.objects.all().count():
+        return False
+    return True
+def infinite_filter(request):
+    limit = request.GET.get('limit')
+    offset = request.GET.get('offset')
+    return Instrumental.objects.all()[int(offset): int(offset) + int(limit)]
+class InstrumentalView(viewsets.ModelViewSet):
     queryset = Instrumental.objects.all()
     serializer_class = InstrumentalSerializer
 
-class ProducerListCreate(generics.ListCreateAPIView):
-    queryset = Producer.objects.all()
-    serializer_class = ProducerSerializer
+class InstrumentalCollectionView(viewsets.ModelViewSet):
+    queryset = InstrumentalCollection.objects.all()
+    serializer_class = InstrumentalCollectionSerializer
+
+class ReactInfiniteInstrumentalView(generics.ListAPIView):
+    serializer_class = InstrumentalSerializer
+    def get_queryset(self):
+        qs = infinite_filter(self.request)
+        return qs
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = self.serializer_class()
+        return Response({
+            "instrumentals": serializer.data,
+            "has_more": is_there_more_data(request)
+        })

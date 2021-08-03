@@ -16,7 +16,7 @@ export default class Homepage extends React.Component{
         this.getArtistAlias();
       }
     getArtistAlias(){
-        this.findByAlias("Xela-Rax")
+        this.findByAlias("Xela-Raxis")
             .then((response) => {
                 this.setState(
                     {
@@ -26,6 +26,7 @@ export default class Homepage extends React.Component{
                     }
                 );
                 console.log(response.data);
+                console.log(response.data.alias);
             })
             .catch(e => {
                 console.log(e);

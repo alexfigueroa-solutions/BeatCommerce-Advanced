@@ -56,8 +56,10 @@
     .navEntryText{
         color: $goldBright;
         text-shadow: 0rem 0rem 1rem black;
+        text-transform: lowercase;
         font-size: 2.2rem;
-        font-family: lakmus;
+        
+        font-family: kingsCross;
         animation: navEntryItemHover 0.5s;
         
         

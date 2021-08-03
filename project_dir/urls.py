@@ -15,13 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('beats.urls'))
-=======
 from rest_framework import routers
 import artists.views as artist_views
+import beats.views as beat_views
 
 router = routers.DefaultRouter()
 
@@ -35,6 +31,16 @@ router_item_list = [
         "plural": r"social-links",
         "view": artist_views.SocialLinkView,
         "singular": "social-link"
+    },
+    {
+        "plural": r"instrumentals",
+        "view": beat_views.InstrumentalView,
+        "singular": "instrumental"
+    },
+    {
+        "plural": r"instrumental-collections",
+        "view": beat_views.InstrumentalCollectionView,
+        "singular": "instrumental-collection"
     }
 ]
 for router_item in router_item_list:
@@ -49,6 +55,10 @@ urlpatterns = [
     path(
         "api/",
         include(router.urls)
+    ),
+    path(
+        "infinite-api/",
+        beat_views.ReactInfiniteInstrumentalView.as_view(),
+        name = "react"
     )
->>>>>>> 7233e50ffcf548050c102dec14182634ac4f2336
 ]

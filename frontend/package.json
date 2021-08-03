@@ -16,29 +16,12 @@
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-<<<<<<< HEAD
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development --entry ./src/index.js --output-path ./static/frontend",
-    "build": "webpack --mode production --entry ./src/index.js --output-path ./static/frontend"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.4",
-    "@babel/preset-react": "^7.13.13",
-    "babel-loader": "^8.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
-=======
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -61,6 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
->>>>>>> 7233e50ffcf548050c102dec14182634ac4f2336
   }
 }

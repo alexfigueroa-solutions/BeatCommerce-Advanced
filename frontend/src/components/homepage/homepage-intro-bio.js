@@ -17,7 +17,7 @@ export default class HomepageIntroBio extends React.Component{
                     </div>
                     <div className = "homepageIntroBioNameWrapper">
                         <div className = "homepageIntroBioNameDiv">
-                            <NavTextLogo text_prompt = {bio_details.alias} font_size = "5rem" className = "homepageIntroBioAlias"></NavTextLogo>
+                            <NavTextLogo text_prompt = {bio_details.alias} font_size = "5rem" text_transform = "uppercase" font_family = "bebasNeue" className = "homepageIntroBioAlias"></NavTextLogo>
                         </div>
                     </div>
                 </div>

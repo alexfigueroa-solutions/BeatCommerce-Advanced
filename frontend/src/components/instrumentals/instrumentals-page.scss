@@ -1,0 +1,10 @@
+@import "../abstract/colors.scss";
+
+.instrumentalsPageWrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+}

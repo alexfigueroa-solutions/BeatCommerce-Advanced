@@ -17,7 +17,7 @@ export default class Navbar extends React.Component{
                     <div className = "navbarDiv">
                         <div className = "logoWrapper">
                             <div className = "logoDiv">
-                                <NavTextLogo font_size = "2rem" text_prompt = "BeatCommerce"></NavTextLogo>
+                                <NavTextLogo font_size = "2rem" font_family = "kingsCross" text_prompt = "BeatCommerce"></NavTextLogo>
                             </div>
                         </div>
                         <div className = "navEntryListWrapper">

@@ -1,23 +1,8 @@
 from django.db import models
 from artists.models import Artist
+from abstract.models import AbstractAudioFile, AbstractCollection
 # Create your models here.
-class AbstractAudioFile(models.Model):
-    title = models.CharField(
-        max_length = 100,
-        null = True,
-        blank = True
-    )
-    bpm = models.FloatField(
-        blank = True,
-        null = True
 
-    )
-    uploaded_at = models.DateTimeField(
-        auto_now = True,
-        null = True,
-        blank = True
-    )
-  
 class Instrumental(AbstractAudioFile):
     producer = models.ForeignKey(
         to = Artist,
@@ -25,4 +10,10 @@ class Instrumental(AbstractAudioFile):
         null = True,
         blank = True
     )
+class InstrumentalCollection(AbstractCollection):
+    instrumentals = models.ManyToManyField(
+        to = Instrumental,
+        blank = True
+    )
+
     

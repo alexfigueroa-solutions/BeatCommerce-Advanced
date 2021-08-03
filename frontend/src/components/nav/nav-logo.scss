@@ -3,7 +3,7 @@
 .navLogoText{
     position: relative;
     font-family: bebasNeue;
-    text-transform: uppercase;
+
     width: 100%;
     font-weight: 900;
     text-shadow: 0rem 0rem 0.01rem rgba(218, 185, 0, 0.623);
@@ -19,6 +19,7 @@
   }
   .navLogoText:hover{
     animation:  animate 0.5s linear infinite;
+
     
   }
   

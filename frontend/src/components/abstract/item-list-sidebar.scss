@@ -1,0 +1,29 @@
+@import "./colors.scss";
+
+@keyframes widthExpand{
+    0%{
+        width: 20%;
+    }
+    100%{
+        width: 25%;
+    }
+}
+@keyframes widthContract{
+    0%{
+        width: 25%;
+    }
+    100%{
+        width: 20%;
+    }
+}
+.itemListSidebarWrapper{
+    width: 20%;
+    background-color: $backgroundDarkTransparent;
+    margin: 1rem;
+    overflow-y: scroll;
+    animation: widthContract 1s; 
+}
+.itemListSidebarWrapper:hover{
+    width: 25%;
+    animation: widthExpand 1s; 
+}

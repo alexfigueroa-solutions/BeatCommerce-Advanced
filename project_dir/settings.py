@@ -42,16 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'beats',
     'leads',
-<<<<<<< HEAD
-    'rest_framework'
-
-    
-    
-=======
     "artists",
     "corsheaders",
-    "rest_framework"
->>>>>>> 7233e50ffcf548050c102dec14182634ac4f2336
+    "rest_framework",
+    "abstract",
+    "uritemplate"
 ]
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
@@ -102,7 +97,7 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': "postgres",
+        'NAME': "beatcommerce",
 
         'USER': 'postgres',
 
