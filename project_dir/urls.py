@@ -59,6 +59,6 @@ urlpatterns = [
     path(
         "infinite-api/",
         beat_views.ReactInfiniteInstrumentalView.as_view(),
-        name = "react"
+        name = "infinite-react"
     )
 ]

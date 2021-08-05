@@ -26,7 +26,7 @@ class InstrumentalDataService{
         return http.get('/instrumentals/?page=$' + toString(page_num))
     }
     getByLimitOffset(limit, offset){
-        return http.get("/instrumentals/?limit=$" + toString(limit) + "&offset=$" + toString(offset))
+        return http.get("/instrumentals/?limit=${" + toString(limit) + "}&offset=${" + toString(offset) + "}")
     }
 }
 export default new InstrumentalDataService;

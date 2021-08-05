@@ -28,6 +28,9 @@ export default class ItemListSidebar extends React.Component{
             }
         }
     }
+    componentDidMount(){
+        this.loadItems();
+    }
     loadItems = () => {
         this.setState(
             {
@@ -38,10 +41,10 @@ export default class ItemListSidebar extends React.Component{
                     offset,
                     limit
                 } = this.state;
-                InstrumentalDataService.getByLimitOffset(this.state.limit, this.state.offset)
+                InstrumentalDataService.getByLimitOffset(limit,offset)
                 .then(
                     res => {
-                        const newInstrumentals = res.data.instrumentals;
+                        const newInstrumentals = res.data;
                         const hasMore = res.data.has_more;
                         this.setState(
                             {
@@ -54,7 +57,7 @@ export default class ItemListSidebar extends React.Component{
                     }
                 )
             }
-        )
+        );
     }
     render(){
         const {
@@ -72,19 +75,30 @@ export default class ItemListSidebar extends React.Component{
                         
                        
                     >
+                        
+                        {
+                            error && <div>{error}</div>
+                        }
+                        
                         {items.map(
                             item => (
                                 <div className = "itemListSidebarItemWrapper">
                                     <div className = "itemListSidebarItemDiv">
-                                        <h1>{item.title}</h1>
-                                        <h2>title</h2>
+                                        <h1 className ="itemListSidebarItemTitle">{item.title}</h1>
+                                        
                                     </div>
                                 </div>
                             )
                         )}
+                        {
+                            loading && <div>loading...</div>
+                        }
+                        {
+                            !hasMore && <div>No more results</div>
+                        }
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
