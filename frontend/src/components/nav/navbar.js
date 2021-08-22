@@ -6,6 +6,10 @@ import NavTextLogo from "./nav-logo.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faPlusSquare, faUser } from "@fortawesome/free-regular-svg-icons";
 import {faArchive, faList, faPlusCircle, faShoppingCart, faUserAlt} from "@fortawesome/free-solid-svg-icons";
+import Login from "../login/login";
+import Homepage from "../homepage/homepage";
+import LoginPage from "../login/login-page";
+import SignUpPage from "../login/sign-up-page";
 export default class Navbar extends React.Component{
     render(){
         const {
@@ -16,9 +20,9 @@ export default class Navbar extends React.Component{
                 <div className = "navbarWrapper">
                     <div className = "navbarDiv">
                         <div className = "logoWrapper">
-                            <div className = "logoDiv">
+                            <Link className = "logoDiv" to = "/home">
                                 <NavTextLogo font_size = "2rem" font_family = "kingsCross" text_prompt = "BeatCommerce"></NavTextLogo>
-                            </div>
+                            </Link>
                         </div>
                         <div className = "navEntryListWrapper">
                             <div className = "navEntryListDiv">
@@ -42,18 +46,14 @@ export default class Navbar extends React.Component{
                         </div>
                         <div className = "navbarExtraMenuWrapper">
                             <div className = "navbarExtraMenuDiv">
-                                <a className = "navbarExtraMenuIcon" >
-                                    <FontAwesomeIcon icon = {faUserAlt}></FontAwesomeIcon>
-                                </a>
-                                <a className = "navbarExtraMenuIcon" >
-                                    <FontAwesomeIcon icon = {faShoppingCart}></FontAwesomeIcon>
-                                </a>  
+                                <Login></Login>
                             </div>
                         </div>
                     </div>
                 </div>
                 <Switch>
                     <Route exact path = "/" component = {App}/>
+                    <Route path = "/home" component = {Homepage}/>
                     {
                         nav_dict_array.map(
                             nav_dict => (
@@ -62,6 +62,9 @@ export default class Navbar extends React.Component{
                             )
                         )
                     }
+                    <Route path = "/login" component = {LoginPage}/>
+                    <Route path = "/sign-up" component = {SignUpPage}/>
+                
                 </Switch>
             </BrowserRouter>
         )

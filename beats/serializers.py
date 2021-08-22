@@ -1,8 +1,12 @@
 from rest_framework import serializers
 from abstract.serializers import AbstractAudioFileSerializer, AbstractCollectionSerializer
 from .models import Instrumental, InstrumentalCollection
+from artists.serializers import ArtistSerializer
 class InstrumentalSerializer(AbstractAudioFileSerializer, serializers.ModelSerializer):
-    
+    producer = ArtistSerializer(
+        many = False,
+        read_only = False
+    )
     class Meta: 
         model = Instrumental
         fields = AbstractAudioFileSerializer.Meta.fields + [

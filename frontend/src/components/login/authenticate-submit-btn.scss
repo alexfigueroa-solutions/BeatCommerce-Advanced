@@ -1,0 +1,15 @@
+@import "../abstract/colors.scss";
+.loginPageFormSubmitBtn{
+    background: $goldGradient;
+    border: 0.1rem solid $goldBright;
+    width: 20%;
+    padding: 0.25rem 0.5rem;
+    font-family: bebasNeue;
+    font-size: 1.25rem;
+
+}
+.loginPageFormSubmitBtn:hover{
+    background: black;
+    color: $goldBright;
+    
+}

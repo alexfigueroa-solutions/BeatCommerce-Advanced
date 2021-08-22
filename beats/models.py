@@ -8,12 +8,15 @@ class Instrumental(AbstractAudioFile):
         to = Artist,
         on_delete = models.DO_NOTHING,
         null = True,
-        blank = True
+        blank = True,
+        related_name = "+"
     )
+  
 class InstrumentalCollection(AbstractCollection):
     instrumentals = models.ManyToManyField(
         to = Instrumental,
-        blank = True
+        blank = True,
+        related_name="+"
     )
 
     

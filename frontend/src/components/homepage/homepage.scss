@@ -5,11 +5,13 @@
     height: 90.5vh;
     
     background-position:top;
-    background-size: cover;
+    background-size:cover;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     background-image: url('../../images/homepage-bg.jpg');
+  
+    
 }
 
 .homepageMainDiv{
@@ -17,10 +19,37 @@
     display: flex;
     flex-flow:row nowrap;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.781);
+
+    height: 100%;
 }
 .homepagePromotionWrapper{
     width: 50%;
 }
 .homepageIntroWrapper{
-    width: 50%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 100%;
+}
+.homepageIntroDiv{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    grid-gap: 1rem;
+    
+
+}
+.bioDetailsIntroDiv{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 25%;
+    border-left: 0.1rem solid $textDarkWhite;
+}
+.bioDetailsIntro{
+    font-family: bebasNeue;
+    color: $textDarkWhite;
+    text-align: center;
 }

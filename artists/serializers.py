@@ -22,6 +22,7 @@ class ArtistSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "alias",
-            "social_links"
+            "social_links",
+            "bio"
         )
 

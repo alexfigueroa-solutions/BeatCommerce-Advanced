@@ -9,7 +9,8 @@ export default class Homepage extends React.Component{
         this.getArtistAlias = this.getArtistAlias.bind(this);
         this.state = {
             social_objs: [],
-            artist: ""
+            artist: "",
+            bio: ""
         };
     }
     componentDidMount() {
@@ -21,7 +22,8 @@ export default class Homepage extends React.Component{
                 this.setState(
                     {
                         social_objs: response.data[0].social_links,
-                        artist: response.data[0].alias
+                        artist: response.data[0].alias,
+                        bio: response.data[0].bio
                         
                     }
                 );
@@ -35,21 +37,22 @@ export default class Homepage extends React.Component{
     render(){
        const bio_details = {
            introduction: "Artist/Producer",
-           alias: this.state.artist
+           alias: this.state.artist,
+           bio: this.state.bio
        };
         return(
             <div className = "homepageWrapper">
                 <div className = "homepageMainDiv">
-                    <div className = "homepagePromotionWrapper">
-                        <div className = "homepagePromotionDiv">
-
-                        </div>
-                    </div>
+                    
                     <div className = "homepageIntroWrapper">
+                        
                         <div className = "homepageIntroDiv">
                             <ArtistHomepageIntro social_objs = {this.state.social_objs} bio_details = {bio_details}>
 
                             </ArtistHomepageIntro>
+                            <div className = "bioDetailsIntroDiv">
+                                <p className = "bioDetailsIntro">{bio_details["bio"]}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

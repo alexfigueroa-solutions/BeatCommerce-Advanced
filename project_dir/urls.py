@@ -18,6 +18,8 @@ from django.urls import path, include
 from rest_framework import routers
 import artists.views as artist_views
 import beats.views as beat_views
+from rest_framework_jwt.views import obtain_jwt_token
+from users.views import current_app_user, AppUserList
 
 router = routers.DefaultRouter()
 
@@ -60,5 +62,8 @@ urlpatterns = [
         "infinite-api/",
         beat_views.ReactInfiniteInstrumentalView.as_view(),
         name = "infinite-react"
-    )
+    ),
+    path('token-auth/', obtain_jwt_token),
+    path('current_user/', current_app_user),
+    path('users/', AppUserList.as_view())
 ]

@@ -9,8 +9,8 @@ export default class ArtistHomepageIntro extends React.Component{
             social_objs = []
         } = this.props;
         return(
-            <div className = "homepageIntroWrapper">
-                <div className = "homepageIntroDiv">
+            <div className = "homepage2IntroWrapper">
+                <div className = "homepage2IntroDiv">
                     <div className = "homepageIntroBioWrapper">
                         <div className = "homepageIntroBioDiv">
                             <HomepageIntroBio bio_details = {bio_details}>

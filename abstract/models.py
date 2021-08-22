@@ -23,6 +23,10 @@ class AbstractAudioFile(models.Model):
         null = True,
         blank = True
     )
+    img_file = models.ImageField(
+        null = True,
+        blank = True
+    )
 class AbstractCollection(models.Model):
     class Meta: 
         abstract = True

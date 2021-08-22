@@ -1,13 +1,13 @@
 @import "../abstract/colors.scss";
 
 
-.homepageIntroWrapper{
+.homepage2IntroWrapper{
     display: flex;
     flex-flow: row;
     justify-content: center;
   
 }
-.homepageIntroDiv{
+.homepage2IntroDiv{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -16,11 +16,13 @@
 
 }
 .homepageIntroBioWrapper{
-    width: 35vh;
+    display: flex;
+    flex-flow: column nowrap;
+
 }
 .homepageIntroSocialDiv{
     display:flex;
     flex-flow: row nowrap;
     justify-content: center;
-    grid-gap: 1rem;
+ 
 }

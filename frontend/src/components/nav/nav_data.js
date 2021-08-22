@@ -4,12 +4,7 @@ import ProducerToolsPage from "../producer-tools-page/producer-tools-page";
 import MusicPage from "../music-page/music-page";
 
 export const nav_dict_array = [
-    {
-        title: "Home",
-        path_ext: "/home",
-        component: [Homepage]
-
-    },
+    
     {
         title: "Instrumentals",
         path_ext: "/instrumentals",

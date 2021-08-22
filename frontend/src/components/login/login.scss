@@ -1,0 +1,37 @@
+@import "../abstract/colors.scss";
+@import "../abstract/fonts.scss";
+
+.navbarAuthenticationNavDiv{
+    grid-gap: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+
+
+}
+@mixin AuthenticationNavBtn{
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: $goldBright;
+    font-family: bebasNeue;
+    
+    
+}
+.navbarSignupBtn:hover{
+    background: $goldBright;
+    color: black;
+}
+.navbarSignupBtn{
+    @include AuthenticationNavBtn;
+    border: solid 0.1rem $goldBright;
+    
+}
+.navbarLoginBtn:hover{
+    background-color: $goldBright;
+    color: black;
+}
+.navbarLoginBtn{
+    @include AuthenticationNavBtn;
+    border: solid 0.1rem $goldBright;
+}

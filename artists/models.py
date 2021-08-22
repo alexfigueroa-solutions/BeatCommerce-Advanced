@@ -32,6 +32,12 @@ class Artist(models.Model):
         blank = True
         
     )
-
+    bio = models.CharField(
+        max_length = 100000,
+        blank = True,
+        null = True
+    )
+    def __str__(self):
+        return f"{self.alias}"
 
   
