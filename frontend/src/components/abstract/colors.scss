@@ -1,12 +1,13 @@
-$goldGradient: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-
+$goldGradient: linear-gradient(to right,#ffc758, #cf8b02, #ffc13b,#f8a500, #fdc43e, #FDB931,#cf8b02);
+$goldTransparentGradient: radial-gradient(ellipse farthest-corner at right bottom, #feda3742 0%, #fdb93134 8%, #9f79282c 30%, #8a6f2f49 40%, transparent 80%),
+radial-gradient(ellipse farthest-corner at left top, #ffffff38 0%, #ffffac34 8%, #d1b4642a 25%, #5d4a1f31 62.5%, #5d4a1f38 100%);
 $darkGradient: linear-gradient(315deg, rgb(5,5,5) 0%, rgb(10,10,10) 74%);
 
 
 $goldBright:#FDB931;
+$goldTransparent:#fdb93181;
 $textDarkWhite: rgb(177, 177, 177);
 $textBlack: rgb(3, 3, 3);
 $backgroundDarkTransparent: rgba(0, 0, 0, 0.664);
-
+$greyTransparent: rgba(126, 126, 126, 0.493);
 $linkColor: #FDB931;

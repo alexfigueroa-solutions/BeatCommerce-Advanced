@@ -13,7 +13,7 @@ def create_instrumentals(num_instrumentals):
         Instrumental.objects.create(
             title = "Instrumental #" + str(index),
             producer = Artist.objects.get(alias = "Xela Rax"),
-            img_file = "media/images/homepage-bg.jpg"
+            img_file = "beatcommerce/media/images/homepage-bg.jpg"
         )
 
 create_instrumentals(50)

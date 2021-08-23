@@ -1,0 +1,14 @@
+@import "../abstract/colors.scss";
+@import '../abstract/fonts.scss';
+.audioPlayerWrapper{
+    width: 100%;
+    height: 8vh;
+    background: $goldGradient;
+    
+}
+.audioPlayerDiv{
+    background-color: rgba(0, 0, 0, 0.26);
+    height: 100%;
+    color: black;
+    font-family: bebasNeue;
+}

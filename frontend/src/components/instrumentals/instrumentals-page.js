@@ -6,6 +6,7 @@ import InstrumentalDataService from "../../services/instrumental.service";
 import { Link } from "react-router-dom";
 import ItemListSidebar from "../abstract/item-list-sidebar";
 import InstrumentalPanel from "./instrumental-panel";
+import AudioPlayer from "../audio-player/audio-player";
 
 
 
@@ -123,7 +124,7 @@ export default class InstrumentalsPage extends React.Component{
                                                 <div className = "itemListSidebarItemDetailsWrapper">
                                                     <div className = "itemListSidebarItemDetailDiv">
                                                         <h1 className ="itemListSidebarItemTitle">{item.title}</h1>
-                                                        <h1 className = "itemListSidebarItemProducer">{item.producer.alias}</h1>
+                                                        <h1 className = "itemListSidebarItemProducer">Prod. {item.producer.alias}</h1>
                                                     </div>
                                                 </div>
                                                 
@@ -144,6 +145,7 @@ export default class InstrumentalsPage extends React.Component{
                     </div>
                     <InstrumentalPanel item = {clickedItem}></InstrumentalPanel>
                 </div>
+                <AudioPlayer item = {clickedItem}></AudioPlayer>
             </div>
         )
     }
