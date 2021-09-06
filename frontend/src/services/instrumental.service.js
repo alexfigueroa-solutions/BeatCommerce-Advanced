@@ -1,6 +1,6 @@
 import http from "../http-common";
 
-class InstrumentalDataService{
+export default new class InstrumentalDataService{
     getAll(){
         return http.get("/instrumentals");
     }
@@ -29,5 +29,6 @@ class InstrumentalDataService{
         return http.get("/instrumentals/?limit=${" + toString(limit) + "}&offset=${" + toString(offset) + "}")
     }
 }
-export default new InstrumentalDataService;
+
+
 
